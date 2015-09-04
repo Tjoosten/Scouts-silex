@@ -1,0 +1,19 @@
+{
+  "name": "SIJOT-3",
+  "version": "1.0.0",
+  "description": "Scouting website",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tjoosten/Scouts-silex.git"
+  },
+  "author": "Tim Joosten",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tjoosten/Scouts-silex/issues"
+  },
+  "homepage": "https://github.com/Tjoosten/Scouts-silex"
+}
