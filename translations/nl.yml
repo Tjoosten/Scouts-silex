@@ -1,0 +1,19 @@
+# -------------------------------------------------------------- #
+# 1. AUTHENCATION.                                               #
+# -------------------------------------------------------------- #
+
+# Authencation error messages.
+message_loginError: Incorrecte gebruikersnaam en of wachtwoord.
+
+# Authencation success messages.
+
+# Authencation page titles.
+title_login: Login.
+
+# -------------------------------------------------------------- #
+# 2. NOTIFICATION.                                               #
+# -------------------------------------------------------------- #
+
+# Titles.
+title_Error: Oh snapp! Er is een fout.
+title_Success: Success.
