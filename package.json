@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Tjoosten/Scouts-silex/issues"
   },
-  "homepage": "https://github.com/Tjoosten/Scouts-silex"
+  "homepage": "https://github.com/Tjoosten/Scouts-silex",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-help": "^1.6.1",
+    "psi": "^1.0.6"
+  }
 }
