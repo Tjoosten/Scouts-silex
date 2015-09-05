@@ -18,3 +18,10 @@ title_register:      Register.
 # Titles.
 title_Error:         Oh snapp! Er is een fout.
 title_Success:       Success.
+
+# -------------------------------------------------------------- #
+# 3. CONTACT & FRONTPAGE.                                        #
+# -------------------------------------------------------------- #
+
+# Page titles
+title_frontpage:     Voorpagina.

@@ -19,6 +19,7 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-help": "^1.6.1",
+    "gulp-less": "^3.0.3",
     "psi": "^1.0.6"
   }
 }

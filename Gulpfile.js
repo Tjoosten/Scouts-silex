@@ -1,8 +1,9 @@
 //
 // Gulpfile for asset management.
 // -------------------------------------------
-var gulp = require('gulp-help')(require('gulp'));
+var gulp      = require('gulp-help')(require('gulp'));
 var pagespeed = require('psi');
+var less      = require('gulp-less');
 
 // Gulp config.
 // -------------------------------------------
@@ -31,4 +32,18 @@ gulp.task('pagespeed-desktop', 'Get the pagespeed results for the desktop websit
     return pagespeed.output(pagespeedUri, {
         strategy: 'mobile'
     }, callback);
+});
+
+// Compile costum less.
+var files = [
+    // Costum files.
+    'resources/less/costum/login.less'
+
+    // Boostrap framework.
+];
+
+gulp.task('less-costum', 'Compile the costum LESS files.', function () {
+    return gulp.src(files)
+        .pipe(less())
+        .pipe(gulp.dest('web/assets/css'));
 });
