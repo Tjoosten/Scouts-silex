@@ -2,24 +2,26 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
+use Dotenv\Dotenv;
+use Silex\Application;
+use Silex\Provider\TwigServiceProvider;
+use Silex\Provider\SessionServiceProvider;
+use Silex\Provider\DoctrineServiceProvider;
+use Silex\Provider\TranslationServiceProvider;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
 
-$app = new Silex\Application();
+$app = new Application();
 
 // dotenv config loader
-$dotenv = new Dotenv\Dotenv('../');
+$dotenv = new Dotenv('../');
 $dotenv->load();
-
-// Check for existance in de .env file.
-$checkConfigVars = $dotenv->required([]);
-$checkConfigVars->notEmpty();
 
 // Enable it only for development.
 $app['debug'] = true;
 
 // Register singleton's.
-$app->register(new Silex\Provider\SessionServiceProvider());
-$app->register(new Silex\Provider\DoctrineServiceProvider(), [
+$app->register(new SessionServiceProvider());
+$app->register(new DoctrineServiceProvider(), [
     'dbs.options' => [
         'mysql' => [
             'driver'    => 'pdo_mysql',
@@ -33,12 +35,12 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), [
 ]);
 
 // Twig templating engine.
-$app->register(new Silex\Provider\TwigServiceProvider(), [
+$app->register(new TwigServiceProvider(), [
     'twig.path' => '../views'
 ]);
 
 // Translation.
-$app->register(new Silex\Provider\TranslationServiceProvider(), [
+$app->register(new TranslationServiceProvider(), [
     'locale_fallbacks' => ['en'],
 ]);
 
