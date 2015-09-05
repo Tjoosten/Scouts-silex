@@ -12,7 +12,7 @@ $authencation = $app['controllers_factory'];
  * @param Request $request.
  * @param $app
  */
-$authencation->get('/login', function(Request $request) use($app) {
+$authencation->get('/login', function() use($app) {
     $viewVariables['title'] = $app['translator']->trans('title_login');
 
     return $app['twig']->render('login.html.twig', $viewVariables);
@@ -47,11 +47,19 @@ $authencation->post('/login', function(Request $request) use($app) {
         $sessionData['message'] = $app['translator']->trans('message_loginSuccess');
         $sessionData['heading'] = $app['translator']->trans('heading_loginSuccess');
 
+        // Set authencated session.
+
         $redirect = $app->redirect($_SERVER['HTTP_REFERER']);
     }
 
     $app['session']->getFlashBag()->add('notification', $sessionData);
     return $redirect;
+});
+
+$authencation->get('/register', function() use($app) {
+    $viewVariables['title'] = $app['translator']->trans('title_register');
+
+    return $app['twig']->render('login.html.twig', $viewVariables);
 });
 
 return $authencation;

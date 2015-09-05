@@ -6,6 +6,14 @@ use Symfony\Component\Translation\Loader\YamlFileLoader;
 
 $app = new Silex\Application();
 
+// dotenv config loader
+$dotenv = new Dotenv\Dotenv('../');
+$dotenv->load();
+
+// Check for existance in de .env file.
+$checkConfigVars = $dotenv->required([]);
+$checkConfigVars->notEmpty();
+
 // Enable it only for development.
 $app['debug'] = true;
 

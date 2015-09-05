@@ -3,7 +3,6 @@
         "silex/silex": "~1.1",
         "symfony/browser-kit": "~2.3",
         "symfony/console": "~2.3",
-        "symfony/config": "~2.3",
         "symfony/css-selector": "~2.3",
         "symfony/dom-crawler": "~2.3",
         "symfony/filesystem": "~2.3",
@@ -20,6 +19,7 @@
         "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
         "swiftmailer/swiftmailer": "5.*",
         "twig/twig": "^1.21",
-        "symfony/yaml": "^2.7"
+        "symfony/yaml": "^2.7",
+        "vlucas/phpdotenv": "^2.0"
     }
 }
