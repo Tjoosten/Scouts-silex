@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
 
 // Routes related namespaces.
-
 $app = new Application();
 
 // Enable it only for development.
@@ -32,6 +31,9 @@ $app->register(new DoctrineServiceProvider(), [
         ]
     ]
 ]);
+
+// Set up the swiftmailer.
+
 
 // Twig templating engine.
 $app->register(new TwigServiceProvider(), [
