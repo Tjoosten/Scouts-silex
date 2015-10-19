@@ -58,7 +58,7 @@ $authencation->post('/login', function(Request $request) use($app) {
 });
 
 /**
- *
+ * [View] the register page.
  */
 $authencation->get('/register', function() use($app) {
     $viewVariables['title'] = $app['translator']->trans('title_register');
@@ -67,7 +67,7 @@ $authencation->get('/register', function() use($app) {
 });
 
 /**
- *
+ * [Method]: Add the registration to the database.
  */
 $authencation->post('/register', function(Request $request) use($app) {
     $stmt = 'INSERT INTO users VALUES (?, ?, ?, ?, ?, ?)';
@@ -80,7 +80,9 @@ $authencation->post('/register', function(Request $request) use($app) {
     $params['role']      = (bool)   1; // Roles:  0 = user   | 1 = admin
     $params['active']    = (bool)   1; // Active: 1 = active | 0 = blocked
 
-    $app['dbs']['mysql']->executeInsert($stmt, $params);
+    $r = $app['dbs']['mysql']->executeInsert($stmt, $params);
+    
+    // TODO/ set mailing logic.
 });
 
 return $authencation;
