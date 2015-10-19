@@ -10,6 +10,7 @@ use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Translation\Loader\YamlFileLoader;
+use Silex\Provider\SwiftmailerServiceProvider;
 
 // Routes related namespaces.
 $app = new Application();
@@ -33,7 +34,15 @@ $app->register(new DoctrineServiceProvider(), [
 ]);
 
 // Set up the swiftmailer.
-
+$app->register(new SwiftmailerServiceProvider());
+$app['swiftmailer.options'] = array(
+    'host' => 'host',
+    'port' => '25',
+    'username' => 'username',
+    'password' => 'password',
+    'encryption' => null,
+    'auth_mode' => null
+);
 
 // Twig templating engine.
 $app->register(new TwigServiceProvider(), [
